@@ -6,12 +6,21 @@ let changeEvent = new Event("change");
 
 document.querySelectorAll(".dropdown").forEach(dropdown => {
     let button = dropdown.querySelector(".dropdown__button");
-    let currentValueElement = button.querySelector(".dropdown__value");
+    let currentValueElement = dropdown.querySelector(".dropdown__value");
     let options = dropdown.querySelector(".dropdown__options");
 
-    let setOption = function (option) {
+    let setOptionPreview = function(option) {
         currentValueElement.innerHTML = option.innerHTML;
+    }
+
+    let setOption = function(option, mustDispatchEvent = true) {
+        setOptionPreview(option);
+        
+        if (dropdown.dataset.value == option.dataset.value) return;
         dropdown.dataset.value = option.dataset.value;
+        
+        if (!mustDispatchEvent) return;
+        dropdown.dispatchEvent(changeEvent);
     }
 
     button.addEventListener("click", function (e) {
@@ -25,9 +34,9 @@ document.querySelectorAll(".dropdown").forEach(dropdown => {
                 e.stopPropagation();
                 return;
             }
+            
             options.classList.remove("dropdown__options--visible");
             setOption(option);
-            dropdown.dispatchEvent(changeEvent);
         });
     });
 
@@ -40,16 +49,15 @@ document.querySelectorAll(".dropdown").forEach(dropdown => {
 
     for (var child of options.children) {
         if (child.attributes.selected == undefined) continue;
-        setOption(child);
+        setOption(child, false);
         isOptionSelected = true;
     }
 
     if (isOptionSelected) return;
     
     for (var child of options.children) {
-        console.log(child);
         if (child.attributes.disabled != undefined) continue;
-        setOption(child);
+        setOption(child, false);
         return;
     }
 });

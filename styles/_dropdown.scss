@@ -4,13 +4,15 @@ $disabled-text-color: #aaa;
 
 .dropdown {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-
-    color: black;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    
+    position: relative;
 
     font-size: 20px;
-    width: max-content;
+
+    cursor: pointer;
 }
 
 .dropdown * {
@@ -24,12 +26,6 @@ $disabled-text-color: #aaa;
     
     padding: 0;
     margin: 0;
-
-    position: relative;
-}
-
-.dropdown__chevron {
-    pointer-events: none;
 }
 
 .dropdown__button {
@@ -41,25 +37,30 @@ $disabled-text-color: #aaa;
     align-items: center;
     align-self: stretch;
 
+    background-color: white;
+    color: black;
+
     outline: none;
     border: none;
-
-    padding: 5px 10px;
-    background-color: white;
     border-radius: $dropdown-border-radius;
 
-    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.dropdown__chevron {
+    pointer-events: none;
 }
 
 .dropdown__options {
     visibility: hidden;
     list-style-type: none;
 
+    position: absolute;
+    top: calc(100% + 4px);
+
     background-color: white;
     border-radius: $dropdown-options-border-radius;
     padding: $dropdown-options-border-radius 0;
-    
-    width: auto;
 }
 
 .dropdown__options--visible {
