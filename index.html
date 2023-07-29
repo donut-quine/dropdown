@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="js/dropdown.js" defer ></script>
+</head>
+<body>
+    <select name="language" id="language">
+        <option value="ru" disabled selected>Disabled</option>
+        <option value="ru">Russian</option>
+        <option value="en">English</option>
+        <option value="en">Swedish</option>
+    </select>
+
+    <div class="dropdown">
+        <button class="dropdown__button">
+            <div class="dropdown__value"></div>
+            <img class="dropdown__chevron" src="icons/chevron-down.svg" alt="chevron">
+        </button>
+        
+        <ul class="dropdown__options">
+            <li class="dropdown__option" data-value="ru" disabled selected>Disabled</li>
+            <li class="dropdown__option" data-value="ru">Russian</li>
+            <li class="dropdown__option" data-value="en">English</li>
+            <li class="dropdown__option" data-value="sw">Swedish</li>
+        </ul>
+    </div>
+</body>
+</html>

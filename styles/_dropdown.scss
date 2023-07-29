@@ -1,0 +1,83 @@
+$dropdown-border-radius: 12px;
+$dropdown-options-border-radius: 4px;
+$disabled-text-color: #aaa;
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    color: black;
+
+    font-size: 20px;
+    width: max-content;
+}
+
+.dropdown * {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+    
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+}
+
+.dropdown__chevron {
+    pointer-events: none;
+}
+
+.dropdown__button {
+    display: flex;
+    gap: 10px;
+    font-size: inherit;
+    
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+
+    outline: none;
+    border: none;
+
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: $dropdown-border-radius;
+
+    cursor: pointer;
+}
+
+.dropdown__options {
+    visibility: hidden;
+    list-style-type: none;
+
+    background-color: white;
+    border-radius: $dropdown-options-border-radius;
+    padding: $dropdown-options-border-radius 0;
+    
+    width: auto;
+}
+
+.dropdown__options--visible {
+    visibility: visible;
+}
+
+.dropdown__option {
+    background-color: white;
+    padding: 0 10px;
+    
+    cursor: pointer;
+}
+
+.dropdown__option[disabled] {
+    color: $disabled-text-color;
+}
+
+.dropdown__option:hover {
+    background-color: #e4e4e4;
+    padding: 0 10px;
+}

@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+select {
+  outline: none;
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: black;
+  font-size: 20px;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.dropdown * {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */ /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+           supported by Chrome, Edge, Opera and Firefox */
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.dropdown__chevron {
+  pointer-events: none;
+}
+
+.dropdown__button {
+  display: flex;
+  gap: 10px;
+  font-size: inherit;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  background-color: white;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.dropdown__options {
+  visibility: hidden;
+  list-style-type: none;
+  background-color: white;
+  border-radius: 4px;
+  padding: 4px 0;
+  width: auto;
+}
+
+.dropdown__options--visible {
+  visibility: visible;
+}
+
+.dropdown__option {
+  background-color: white;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.dropdown__option[disabled] {
+  color: #aaa;
+}
+
+.dropdown__option:hover {
+  background-color: #e4e4e4;
+  padding: 0 10px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #eee;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 20px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=styles.css.map */
